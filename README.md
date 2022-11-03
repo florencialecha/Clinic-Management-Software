@@ -1,4 +1,4 @@
-#Sessions Booking System
+# Sessions Booking System
 Appointment booking system for a dental clinic. 
 [Project done for the Backend I subject, part of the Certified Tech Developer course taken at Digital House.](https://github.com/florencialecha/sessionsBookingSystem/files/9933116/Trabajo.Integrador.Back.End.I.docx.pdf)
 
@@ -8,7 +8,7 @@ Patient data management: list, add, modify and delete patients. For each patient
 Register appointment: it must be possible to assign a patient an appointment with a dentist at a certain date and time. 
 Login: validate entry to the system by means of a login with username and password. Any logged-in user (ROLE_USER) must be allowed to register an appointment, but only those who have an administration role (ROLE_ADMIN) must be able to manage dentists and patients. A user can have only one role and they will be entered directly into the database.
 
-#Technical Requirements
+# Technical Requirements
 
 The application must be developed in layers:
 
