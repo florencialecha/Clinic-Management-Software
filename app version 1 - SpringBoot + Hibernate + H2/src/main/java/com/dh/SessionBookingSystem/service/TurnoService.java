@@ -1,4 +1,4 @@
-package com.dh.sistemaGestionClinica.service;
+package com.dh.SessionBookingSystem.service;
 
 import org.springframework.stereotype.Service;
 

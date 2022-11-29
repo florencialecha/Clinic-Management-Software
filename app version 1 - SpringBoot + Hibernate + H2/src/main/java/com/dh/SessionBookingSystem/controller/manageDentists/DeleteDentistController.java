@@ -1,7 +1,7 @@
-package com.dh.sistemaGestionClinica.controller.manageDentists;
+package com.dh.SessionBookingSystem.controller.manageDentists;
 
-import com.dh.sistemaGestionClinica.entity.Dentist;
-import com.dh.sistemaGestionClinica.service.DentistService;
+import com.dh.SessionBookingSystem.entity.Dentist;
+import com.dh.SessionBookingSystem.service.DentistService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;

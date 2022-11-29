@@ -1,4 +1,4 @@
-package com.dh.sistemaGestionClinica.entity;
+package com.dh.SessionBookingSystem.entity;
 
 import javax.persistence.*;
 

@@ -1,9 +1,8 @@
-package com.dh.sistemaGestionClinica.service;
+package com.dh.SessionBookingSystem.service;
 
-import com.dh.sistemaGestionClinica.entity.Dentist;
-import com.dh.sistemaGestionClinica.repository.DentistRepository;
+import com.dh.SessionBookingSystem.entity.Dentist;
+import com.dh.SessionBookingSystem.repository.DentistRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -31,8 +30,8 @@ public class DentistService {
             return dentistRepository.findById(id);
     }
 
-    public Optional<Dentist> findByNameAndLastname(String name, String lastname) {
-        return dentistRepository.findByNameAndLastname(name, lastname);
+    public Optional<Dentist> findByNameAndLastname(String name, String lastName) {
+        return dentistRepository.findByNameAndLastName(name, lastName);
     }
 
     public List<Dentist> findAll() { return dentistRepository.findAll();};
