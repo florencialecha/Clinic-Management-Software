@@ -5,6 +5,8 @@ import com.dh.SessionBookingSystem.repository.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class PatientService {
 
@@ -18,4 +20,13 @@ public class PatientService {
     public void save(Patient patient) {
        patientRepository.save(patient);
     }
+
+    public Optional<Patient> findById(Long id) {
+        return patientRepository.findById(id);
+    }
+
+    public void deleteById(Long id) {
+        patientRepository.deleteById(id);
+    }
+
 }
