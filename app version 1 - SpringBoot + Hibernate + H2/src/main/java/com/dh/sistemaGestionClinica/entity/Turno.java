@@ -13,7 +13,7 @@ public class Turno {
     private Integer id;
     @OneToOne
     @JoinColumn(name = "paciente_id")
-    private Paciente paciente;
+    private Patient patient;
     @OneToOne
     @JoinColumn(name = "odontologo_id")
     private Dentist dentist;
@@ -22,9 +22,9 @@ public class Turno {
     public Turno() {
     }
 
-    public Turno(Integer id, Paciente paciente, Dentist dentist, LocalDateTime fechaTurno) {
+    public Turno(Integer id, Patient patient, Dentist dentist, LocalDateTime fechaTurno) {
         this.id = id;
-        this.paciente = paciente;
+        this.patient = patient;
         this.dentist = dentist;
         this.fechaTurno = fechaTurno;
     }
@@ -37,12 +37,12 @@ public class Turno {
         this.id = id;
     }
 
-    public Paciente getPaciente() {
-        return paciente;
+    public Patient getPaciente() {
+        return patient;
     }
 
-    public void setPaciente(Paciente paciente) {
-        this.paciente = paciente;
+    public void setPaciente(Patient patient) {
+        this.patient = patient;
     }
 
     public Dentist getOdontologo() {

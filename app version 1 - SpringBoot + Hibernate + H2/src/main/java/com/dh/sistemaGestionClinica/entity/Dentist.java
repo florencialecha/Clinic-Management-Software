@@ -14,16 +14,16 @@ public class Dentist {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String lastname;
+    private String lastName;
     private String license;
     
     public Dentist() {
     }
 
-    public Dentist(Long id, String name, String lastname, String license) {
+    public Dentist(Long id, String name, String lastName, String license) {
         this.id = id;
         this.name = name;
-        this.lastname = lastname;
+        this.lastName = lastName;
         this.license = license;
     }
 

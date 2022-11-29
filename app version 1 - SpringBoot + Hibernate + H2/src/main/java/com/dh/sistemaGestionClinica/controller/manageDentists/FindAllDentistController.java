@@ -1,4 +1,4 @@
-package com.dh.sistemaGestionClinica.controller;
+package com.dh.sistemaGestionClinica.controller.manageDentists;
 
 import com.dh.sistemaGestionClinica.entity.Dentist;
 import com.dh.sistemaGestionClinica.service.DentistService;

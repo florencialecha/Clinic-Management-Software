@@ -1,4 +1,4 @@
-package com.dh.sistemaGestionClinica.controller;
+package com.dh.sistemaGestionClinica.controller.manageDentists;
 
 import com.dh.sistemaGestionClinica.entity.Dentist;
 import com.dh.sistemaGestionClinica.service.DentistService;
@@ -26,7 +26,7 @@ public class UpdateDentistController {
             return ResponseEntity.status(404).body("Can't update dentist with id: " + dentist.getId() + " . The dentist does not exist in the database.");
         }
         dentistService.save(dentist);
-        return ResponseEntity.status(200).body("Update dentist whit id: " + dentist.getId() + ", name: " + dentist.getName() + ", last name: " + dentist.getLastname() + ", register number: " + dentist.getLicense() + ".");
+        return ResponseEntity.status(200).body("Update dentist whit id: " + dentist.getId() + ", name: " + dentist.getName() + ", last name: " + dentist.getLastName() + ", register number: " + dentist.getLicense() + ".");
     }
 
 }

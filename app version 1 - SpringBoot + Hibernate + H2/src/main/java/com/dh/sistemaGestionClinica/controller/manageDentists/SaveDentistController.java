@@ -1,4 +1,4 @@
-package com.dh.sistemaGestionClinica.controller;
+package com.dh.sistemaGestionClinica.controller.manageDentists;
 
 import com.dh.sistemaGestionClinica.entity.Dentist;
 import com.dh.sistemaGestionClinica.service.DentistService;
@@ -23,6 +23,6 @@ public class SaveDentistController {
     @PostMapping
     public ResponseEntity<String> save(@RequestBody Dentist dentist) {
         dentistService.save(dentist);
-        return ResponseEntity.status(200).body("Se agregó un nuevo odontólogo con nombre: " + dentist.getName() + ", apellido: " + dentist.getLastname() + ", matrícula: " + dentist.getLicense() + ", e id: " + dentist.getId() + ".");
+        return ResponseEntity.status(200).body("Se agregó un nuevo odontólogo con nombre: " + dentist.getName() + ", apellido: " + dentist.getLastName() + ", matrícula: " + dentist.getLicense() + ", e id: " + dentist.getId() + ".");
         }
 }
