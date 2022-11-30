@@ -9,6 +9,6 @@ import java.util.Optional;
 @Repository
 public interface DentistRepository extends JpaRepository<Dentist, Long> {
 
-
     Optional<Dentist> findByNameAndLastName(String name, String lastName);
+
 }

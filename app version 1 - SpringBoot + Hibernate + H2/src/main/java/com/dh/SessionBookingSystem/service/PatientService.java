@@ -29,4 +29,7 @@ public class PatientService {
         patientRepository.deleteById(id);
     }
 
+    public Optional<Patient> findByNameAndLastname(String name, String lastname) {
+        return patientRepository.findByNameAndLastName(name, lastname);
+    }
 }
