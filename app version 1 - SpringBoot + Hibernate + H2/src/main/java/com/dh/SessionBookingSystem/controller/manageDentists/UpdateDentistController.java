@@ -23,7 +23,7 @@ public class UpdateDentistController {
     public ResponseEntity<String> update(@RequestBody Dentist dentist) {
         Optional<Dentist> searchDentist = dentistService.findById(dentist.getId());
         if (searchDentist.isEmpty()) {
-            return ResponseEntity.status(404).body("Can't update dentist with id: " + dentist.getId() + " . The dentist does not exist in the database.");
+            return ResponseEntity.status(400).body("Can't update dentist with id: " + dentist.getId() + " . The dentist does not exist in the database.");
         }
         dentistService.save(dentist);
         return ResponseEntity.status(200).body("Update dentist whit id: " + dentist.getId() + ", name: " + dentist.getName() + ", last name: " + dentist.getLastName() + ", register number: " + dentist.getLicense() + ".");

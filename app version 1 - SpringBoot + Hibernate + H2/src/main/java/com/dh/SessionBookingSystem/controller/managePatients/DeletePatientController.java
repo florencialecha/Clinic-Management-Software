@@ -27,10 +27,10 @@ public class DeletePatientController {
     private ResponseEntity<String> deletePatient(@PathVariable Long id) {
         Optional<Patient> searchPatient = patientService.findById(id);
         if (searchPatient.isEmpty()) {
-            ResponseEntity.status(404).body("Can't delete patient with id: " + id + " . The patient does not exist in the database.");
+            ResponseEntity.status(400).body("Can't delete patient with id: " + id + " . The patient does not exist in the database.");
         }
         patientService.deleteById(id);
         return ResponseEntity.status(200).body("Delete patient with id: " + id);
-        }
+    }
 
 }

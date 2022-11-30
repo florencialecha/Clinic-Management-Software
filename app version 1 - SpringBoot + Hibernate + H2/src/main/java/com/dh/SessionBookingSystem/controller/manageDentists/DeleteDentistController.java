@@ -27,7 +27,7 @@ public class DeleteDentistController {
     public ResponseEntity<String> DeleteDentistById(@PathVariable Long id) {
         Optional<Dentist> searchDentist = dentistService.findById(id);
         if (searchDentist.isEmpty()) {
-            ResponseEntity.status(404).body("Can't delete dentist with id: " + id + " . The dentist does not exist in the database.");
+            ResponseEntity.status(400).body("Can't delete dentist with id: " + id + " . The dentist does not exist in the database.");
         }
         dentistService.deleteById(id);
         return ResponseEntity.status(200).body("Delete dentist with id: " + id);

@@ -24,7 +24,7 @@ public class FindByDentistController {
     public ResponseEntity<Optional<Dentist>> findDentistById(@RequestParam Long id) {
         Optional<Dentist> searchDentist = dentistService.findById(id);
         if (searchDentist.isEmpty()) {
-            return ResponseEntity.status(404).body(null);
+            return ResponseEntity.status(500).body(null);
         }
         return ResponseEntity.status(200).body(searchDentist);
     }
@@ -33,7 +33,7 @@ public class FindByDentistController {
     public ResponseEntity<Optional<Dentist>> findDentistByNameAndLastname(@RequestParam String name, String lastname) {
         Optional<Dentist> searchDentist = dentistService.findByNameAndLastname(name, lastname);
         if (searchDentist.isEmpty()) {
-            return ResponseEntity.status(404).body(null);
+            return ResponseEntity.status(400).body(null);
         }
         return ResponseEntity.status(200).body(searchDentist);
     }
