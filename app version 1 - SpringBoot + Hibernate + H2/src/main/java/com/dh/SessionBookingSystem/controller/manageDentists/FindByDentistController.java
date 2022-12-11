@@ -29,13 +29,13 @@ public class FindByDentistController {
         return ResponseEntity.status(200).body(searchDentist);
     }
 
-    @GetMapping("/byNameAndLastName")
+/*    @GetMapping("/byNameAndLastName")
     public ResponseEntity<Optional<Dentist>> findDentistByNameAndLastname(@RequestParam String name, String lastName) {
         Optional<Dentist> searchDentist = dentistService.findByNameAndLastname(name, lastName);
         if (searchDentist.isEmpty()) {
             return ResponseEntity.status(400).body(null);
         }
         return ResponseEntity.status(200).body(searchDentist);
-    }
+    }*/
 
 }
