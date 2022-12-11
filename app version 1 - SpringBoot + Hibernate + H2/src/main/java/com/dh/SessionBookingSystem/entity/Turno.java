@@ -14,7 +14,7 @@ public class Turno {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     @ManyToOne
     @JoinColumn(name = "paciente_id", referencedColumnName = "id")
     private Patient patient;
