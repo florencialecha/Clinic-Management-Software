@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 @Table
 @Getter @Setter
 
-public class Turno {
+public class Appointment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,9 +21,9 @@ public class Turno {
     @ManyToOne
     @JoinColumn(name = "odontologo_id", referencedColumnName = "id")
     private Dentist dentist;
-    private LocalDateTime fechaTurno;
+    private LocalDateTime appointmentDate;
 
-    public Turno() {
+    public Appointment() {
     }
 
 }

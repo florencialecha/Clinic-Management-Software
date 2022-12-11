@@ -1,9 +1,9 @@
 package com.dh.SessionBookingSystem.repository;
 
-import com.dh.SessionBookingSystem.entity.Turno;
+import com.dh.SessionBookingSystem.entity.Appointment;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface TurnoRepository extends JpaRepository<Turno, Integer> {
+public interface AppointmentRepository extends JpaRepository<Appointment, Integer> {
 }

@@ -9,11 +9,11 @@ import java.time.LocalDateTime;
 
 @Getter @Setter
 
-public class TurnoDTO {
+public class AppointmentDTO {
 
     private Long id;
-    private Patient patient;
-    private Dentist dentist;
-    private LocalDateTime fechaTurno;
+    private Long patientId;
+    private Long dentistId;
+    private LocalDateTime appointmentDate;
 
 }
