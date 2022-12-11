@@ -1,64 +1,29 @@
 package com.dh.SessionBookingSystem.entity;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
 @Table
+@Getter @Setter
 
 public class Turno {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @OneToOne
-    @JoinColumn(name = "paciente_id")
+    @ManyToOne
+    @JoinColumn(name = "paciente_id", referencedColumnName = "id")
     private Patient patient;
-    @OneToOne
-    @JoinColumn(name = "odontologo_id")
+    @ManyToOne
+    @JoinColumn(name = "odontologo_id", referencedColumnName = "id")
     private Dentist dentist;
     private LocalDateTime fechaTurno;
 
     public Turno() {
-    }
-
-    public Turno(Integer id, Patient patient, Dentist dentist, LocalDateTime fechaTurno) {
-        this.id = id;
-        this.patient = patient;
-        this.dentist = dentist;
-        this.fechaTurno = fechaTurno;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Patient getPaciente() {
-        return patient;
-    }
-
-    public void setPaciente(Patient patient) {
-        this.patient = patient;
-    }
-
-    public Dentist getOdontologo() {
-        return dentist;
-    }
-
-    public void setOdontologo(Dentist dentist) {
-        this.dentist = dentist;
-    }
-
-    public LocalDateTime getFechaTurno() {
-        return fechaTurno;
-    }
-
-    public void setFechaTurno(LocalDateTime fechaTurno) {
-        this.fechaTurno = fechaTurno;
     }
 
 }
