@@ -82,4 +82,8 @@ public class AppointmentService {
         appointmentRepository.deleteById(id);
     }
 
+    public void update(AppointmentDTO appointmentDTO) {
+        Appointment appointmentToUpdate = appointmentDTOToAppointment(appointmentDTO);
+        appointmentRepository.save(appointmentToUpdate);
+    }
 }
