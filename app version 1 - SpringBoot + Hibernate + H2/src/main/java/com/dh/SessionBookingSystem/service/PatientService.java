@@ -1,7 +1,5 @@
 package com.dh.SessionBookingSystem.service;
 
-import com.dh.SessionBookingSystem.entity.Appointment;
-import com.dh.SessionBookingSystem.entity.Dentist;
 import com.dh.SessionBookingSystem.entity.Patient;
 import com.dh.SessionBookingSystem.exception.BadRequestException;
 import com.dh.SessionBookingSystem.exception.ResourceNotFoundException;
@@ -24,10 +22,11 @@ public class PatientService {
         this.patientRepository = patientRepository;
     }
 
-    public void save(Patient patient) throws BadRequestException {
+    public Patient save(Patient patient) {
         LOGGER.info("We have received your request. Please wait.");
        patientRepository.save(patient);
        LOGGER.info("Order completed. We are sending the result.");
+        return patient;
     }
 
     public Optional<Patient> findById(Long id) throws ResourceNotFoundException {

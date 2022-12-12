@@ -216,3 +216,75 @@
 [2022-12-12 04:56:27] [ INFO ] [SaveApponintmentController:45] Add an Appointment with date: 2022-11-29.
 [2022-12-12 04:56:35] [ INFO ] [FindByAppointmentController:40] Request send: you are trying to find an Appointment.
 [2022-12-12 04:56:35] [ INFO ] [AppointmentService:39] We have received your request. Please wait.
+[2022-12-12 05:00:09] [ INFO ] [SavePatientController:31] Request send: you are trying to save a patient with name: Florencia.
+[2022-12-12 05:00:09] [ INFO ] [PatientService:28] We have received your request. Please wait.
+[2022-12-12 05:00:09] [ INFO ] [PatientService:30] Order completed. We are sending the result.
+[2022-12-12 05:00:09] [ INFO ] [SavePatientController:33] Add a patient with id: 1.
+[2022-12-12 05:00:11] [ INFO ] [SaveDentistController:31] Request send: you are trying to save a dentist with name: Juan.
+[2022-12-12 05:00:11] [ INFO ] [DentistService:26] We have received your request. Please wait.
+[2022-12-12 05:00:11] [ INFO ] [DentistService:28] Order completed. We are sending the result.
+[2022-12-12 05:00:11] [ INFO ] [SaveDentistController:33] Add a dentist with id: 1.
+[2022-12-12 05:00:13] [ INFO ] [SaveApponintmentController:38] Request send: you are trying to save an Appointment with date: 2022-11-29.
+[2022-12-12 05:00:13] [ INFO ] [PatientService:34] We have received your request. Please wait.
+[2022-12-12 05:00:13] [ INFO ] [DentistService:32] We have received your request. Please wait.
+[2022-12-12 05:00:13] [ INFO ] [AppointmentService:30] You are trying to add an Appointment with appointment date: 2022-11-29.
+[2022-12-12 05:00:13] [ INFO ] [AppointmentService:34] Order completed. We are sending the result.
+[2022-12-12 05:00:13] [ INFO ] [SaveApponintmentController:45] Add an Appointment with date: 2022-11-29.
+[2022-12-12 05:00:19] [ INFO ] [FindByAppointmentController:40] Request send: you are trying to find an Appointment.
+[2022-12-12 05:00:19] [ INFO ] [AppointmentService:39] We have received your request. Please wait.
+[2022-12-12 05:00:24] [ INFO ] [FindAllAppointmentController:37] Request send: you are trying to list all appointments.
+[2022-12-12 05:00:24] [ INFO ] [AppointmentService:47] We have received your request. Please wait.
+[2022-12-12 05:00:30] [ INFO ] [DeleteAppointmentController:38] Request send: you are trying to delete an Appointment with id: 1.
+[2022-12-12 05:00:30] [ INFO ] [AppointmentService:39] We have received your request. Please wait.
+[2022-12-12 05:00:30] [ INFO ] [AppointmentService:64] We have received your request. Please wait.
+[2022-12-12 05:00:30] [ INFO ] [AppointmentService:66] Order completed. We are sending the result.
+[2022-12-12 05:00:30] [ INFO ] [DeleteAppointmentController:43] Delete appointment with id: 1.
+[2022-12-12 05:00:35] [ INFO ] [FindAllAppointmentController:37] Request send: you are trying to list all appointments.
+[2022-12-12 05:00:35] [ INFO ] [AppointmentService:47] We have received your request. Please wait.
+[2022-12-12 05:00:43] [ INFO ] [UpdateAppointmentController:30] Request send: you are trying to delete an Appointment with id: null.
+[2022-12-12 05:00:55] [ INFO ] [UpdateAppointmentController:30] Request send: you are trying to delete an Appointment with id: null.
+[2022-12-12 05:01:37] [ INFO ] [UpdatePatientController:34] Request send: you are trying to update a patient with name: Florencia.
+[2022-12-12 05:01:37] [ INFO ] [PatientService:34] We have received your request. Please wait.
+[2022-12-12 05:01:47] [ INFO ] [SavePatientController:31] Request send: you are trying to save a patient with name: Florencia.
+[2022-12-12 05:01:47] [ INFO ] [PatientService:28] We have received your request. Please wait.
+[2022-12-12 05:01:47] [ INFO ] [PatientService:30] Order completed. We are sending the result.
+[2022-12-12 05:01:47] [ INFO ] [SavePatientController:33] Add a patient with id: 2.
+[2022-12-12 05:01:48] [ INFO ] [SavePatientController:31] Request send: you are trying to save a patient with name: Florencia.
+[2022-12-12 05:01:48] [ INFO ] [PatientService:28] We have received your request. Please wait.
+[2022-12-12 05:01:48] [ INFO ] [PatientService:30] Order completed. We are sending the result.
+[2022-12-12 05:01:48] [ INFO ] [SavePatientController:33] Add a patient with id: 3.
+[2022-12-12 05:01:49] [ INFO ] [SavePatientController:31] Request send: you are trying to save a patient with name: Florencia.
+[2022-12-12 05:01:49] [ INFO ] [PatientService:28] We have received your request. Please wait.
+[2022-12-12 05:01:49] [ INFO ] [PatientService:30] Order completed. We are sending the result.
+[2022-12-12 05:01:49] [ INFO ] [SavePatientController:33] Add a patient with id: 4.
+[2022-12-12 05:01:50] [ INFO ] [SavePatientController:31] Request send: you are trying to save a patient with name: Florencia.
+[2022-12-12 05:01:50] [ INFO ] [PatientService:28] We have received your request. Please wait.
+[2022-12-12 05:01:50] [ INFO ] [PatientService:30] Order completed. We are sending the result.
+[2022-12-12 05:01:50] [ INFO ] [SavePatientController:33] Add a patient with id: 5.
+[2022-12-12 05:01:53] [ INFO ] [UpdatePatientController:34] Request send: you are trying to update a patient with name: Florencia.
+[2022-12-12 05:01:53] [ INFO ] [PatientService:34] We have received your request. Please wait.
+[2022-12-12 05:01:53] [ INFO ] [PatientService:44] We have received your request. Please wait.
+[2022-12-12 05:01:53] [ INFO ] [PatientService:46] Order completed. We are sending the result.
+[2022-12-12 05:01:53] [ INFO ] [UpdatePatientController:40] Update patient with id: 4
+[2022-12-12 05:01:58] [ INFO ] [SaveDentistController:31] Request send: you are trying to save a dentist with name: Juan.
+[2022-12-12 05:01:58] [ INFO ] [DentistService:26] We have received your request. Please wait.
+[2022-12-12 05:01:58] [ INFO ] [DentistService:28] Order completed. We are sending the result.
+[2022-12-12 05:01:58] [ INFO ] [SaveDentistController:33] Add a dentist with id: 2.
+[2022-12-12 05:01:59] [ INFO ] [SaveDentistController:31] Request send: you are trying to save a dentist with name: Juan.
+[2022-12-12 05:01:59] [ INFO ] [DentistService:26] We have received your request. Please wait.
+[2022-12-12 05:01:59] [ INFO ] [DentistService:28] Order completed. We are sending the result.
+[2022-12-12 05:01:59] [ INFO ] [SaveDentistController:33] Add a dentist with id: 3.
+[2022-12-12 05:02:02] [ INFO ] [UpdateDentistController:30] Request send: you are trying to update a dentist with name: Camila.
+[2022-12-12 05:02:02] [ INFO ] [DentistService:32] We have received your request. Please wait.
+[2022-12-12 05:02:08] [ INFO ] [UpdateDentistController:30] Request send: you are trying to update a dentist with name: Camila.
+[2022-12-12 05:02:08] [ INFO ] [DentistService:32] We have received your request. Please wait.
+[2022-12-12 05:02:08] [ INFO ] [DentistService:42] We have received your request. Please wait.
+[2022-12-12 05:02:08] [ INFO ] [DentistService:44] Order completed. We are sending the result.
+[2022-12-12 05:02:08] [ INFO ] [UpdateDentistController:36] Update dentist with id: 1
+[2022-12-12 05:02:36] [ INFO ] [UpdateAppointmentController:30] Request send: you are trying to delete an Appointment with id: null.
+[2022-12-12 15:49:15] [ INFO ] [PatientService:26] We have received your request. Please wait.
+[2022-12-12 16:03:50] [ INFO ] [PatientService:26] We have received your request. Please wait.
+[2022-12-12 16:12:50] [ INFO ] [PatientService:26] We have received your request. Please wait.
+[2022-12-12 16:14:45] [ INFO ] [PatientService:26] We have received your request. Please wait.
+[2022-12-12 16:23:17] [ INFO ] [PatientService:26] We have received your request. Please wait.
+[2022-12-12 16:25:39] [ INFO ] [PatientService:26] We have received your request. Please wait.

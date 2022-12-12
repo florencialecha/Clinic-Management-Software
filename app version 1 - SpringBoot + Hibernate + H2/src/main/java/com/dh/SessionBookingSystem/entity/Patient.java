@@ -1,10 +1,13 @@
 package com.dh.SessionBookingSystem.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table
@@ -19,12 +22,19 @@ public class Patient {
     private String name;
 
     private String lastName;
+
     private Integer dni;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "domicilio_id", nullable = false)
     private Address address;
     private LocalDate entryDate;
+
+    private String email;
+
+    @OneToMany(mappedBy = "patient",fetch = FetchType.LAZY)
+    @JsonIgnore
+    private Set<Appointment> turnos= new HashSet<>();
 
     public Patient() {
     }

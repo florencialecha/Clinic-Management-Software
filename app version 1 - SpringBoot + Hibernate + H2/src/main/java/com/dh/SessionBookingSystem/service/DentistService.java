@@ -22,10 +22,11 @@ public class DentistService {
         this.dentistRepository = dentistRepository;
     }
 
-    public void save(Dentist dentist) throws BadRequestException {
+    public Dentist save(Dentist dentist) throws BadRequestException {
         LOGGER.info("We have received your request. Please wait.");
         dentistRepository.save(dentist);
         LOGGER.info("Order completed. We are sending the result.");
+        return dentist;
     }
 
     public Optional<Dentist> findById(Long id) throws ResourceNotFoundException {
