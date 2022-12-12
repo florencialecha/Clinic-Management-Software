@@ -4,7 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Entity
 @Table
@@ -21,9 +21,22 @@ public class Appointment {
     @ManyToOne
     @JoinColumn(name = "odontologo_id", referencedColumnName = "id")
     private Dentist dentist;
-    private LocalDateTime appointmentDate;
+    private LocalDate appointmentDate;
 
     public Appointment() {
+    }
+
+    public Appointment(Long id, Patient patient, Dentist dentist, LocalDate appointmentDate) {
+        this.id = id;
+        this.patient = patient;
+        this.dentist = dentist;
+        this.appointmentDate = appointmentDate;
+    }
+
+    public Appointment(Patient patient, Dentist dentist, LocalDate appointmentDate) {
+        this.patient = patient;
+        this.dentist = dentist;
+        this.appointmentDate = appointmentDate;
     }
 
 }

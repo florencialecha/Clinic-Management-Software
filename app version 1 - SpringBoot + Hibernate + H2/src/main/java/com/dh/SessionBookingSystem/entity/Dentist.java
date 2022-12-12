@@ -8,6 +8,7 @@ import javax.persistence.*;
 @Entity
 @Table
 @Getter @Setter
+
 public class Dentist {
 
     @Id
@@ -18,6 +19,12 @@ public class Dentist {
     private String license;
     
     public Dentist() {
+    }
+
+    public Dentist(String name, String lastName, String license) {
+        this.name = name;
+        this.lastName = lastName;
+        this.license = license;
     }
 
     public Dentist(Long id, String name, String lastName, String license) {

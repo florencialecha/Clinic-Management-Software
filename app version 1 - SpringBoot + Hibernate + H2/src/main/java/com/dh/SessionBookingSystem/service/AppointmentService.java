@@ -49,13 +49,21 @@ public class AppointmentService {
         Patient patient = new Patient();
         Dentist dentist = new Dentist();
 
-        patient.setId(appointmentDTO.getId());
+        patient.setId(appointmentDTO.getPatientId());
         dentist.setId(appointmentDTO.getDentistId());
         appointment.setId(appointmentDTO.getId());
         appointment.setAppointmentDate(appointmentDTO.getAppointmentDate());
+
+        appointment.setPatient(patient);
+        appointment.setDentist(dentist);
 
         return appointment;
 
     }
 
+    public AppointmentDTO save(AppointmentDTO appointmentDTO) {
+        Appointment appointmentToSave = appointmentDTOToAppointment(appointmentDTO);
+        Appointment appointmentSaved = appointmentRepository.save(appointmentToSave);
+        return appointmentToAppointmentDTO(appointmentSaved);
+    }
 }

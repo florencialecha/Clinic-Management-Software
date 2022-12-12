@@ -29,6 +29,14 @@ public class Patient {
     public Patient() {
     }
 
+    public Patient(String name, String lastName, Integer dni, Address address, LocalDate entryDate) {
+        this.name = name;
+        this.lastName = lastName;
+        this.dni = dni;
+        this.address = address;
+        this.entryDate = entryDate;
+    }
+
     public Patient(Long id, String name, String lastName, Address address, Integer dni, LocalDate entryDate) {
         this.id = id;
         this.name = name;
