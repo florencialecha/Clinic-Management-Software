@@ -23,7 +23,7 @@ public class DeleteDentistController {
         this.dentistService = dentistService;
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<String> DeleteDentistById(@PathVariable Long id) {
         Optional<Dentist> searchDentist = dentistService.findById(id);
         if (searchDentist.isEmpty()) {

@@ -23,7 +23,7 @@ public class DeletePatientController {
         this.patientService = patientService;
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("/{id}")
     private ResponseEntity<String> deletePatient(@PathVariable Long id) {
         Optional<Patient> searchPatient = patientService.findById(id);
         if (searchPatient.isEmpty()) {

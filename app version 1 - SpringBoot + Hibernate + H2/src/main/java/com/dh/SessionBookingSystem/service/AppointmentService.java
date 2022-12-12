@@ -77,4 +77,9 @@ public class AppointmentService {
         }
         return response;
     }
+
+    public void deleteById(Long id) {
+        appointmentRepository.deleteById(id);
+    }
+
 }
