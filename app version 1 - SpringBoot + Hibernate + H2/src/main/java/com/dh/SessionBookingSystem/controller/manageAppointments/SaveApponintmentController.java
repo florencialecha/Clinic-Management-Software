@@ -33,23 +33,13 @@ public class SaveApponintmentController {
 
         ResponseEntity<AppointmentDTO> response;
 
-/*        if (patientService.findById(appointmentDTO.getPatientId()).isEmpty() ||
+        if (patientService.findById(appointmentDTO.getPatientId()).isEmpty() ||
             dentistService.findById(appointmentDTO.getDentistId()).isEmpty()) {
             throw new BadRequestException("Patient or dentist doesnt extist");
 
         } else appointmentService.save(appointmentDTO);
 
         return response = ResponseEntity.ok(appointmentService.save(appointmentDTO));
-    }*/
-
-        if (patientService.findById(appointmentDTO.getPatientId()).isPresent() &&
-                dentistService.findById(appointmentDTO.getDentistId()).isPresent()) {
-            response = ResponseEntity.ok(appointmentService.save(appointmentDTO));
-        }
-        else {
-            throw new BadRequestException("Patient or dentist doesnt extist");
-        }
-        return response;
     }
 
 }
