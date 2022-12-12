@@ -8,6 +8,8 @@ import com.dh.SessionBookingSystem.repository.AppointmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -65,5 +67,14 @@ public class AppointmentService {
         Appointment appointmentToSave = appointmentDTOToAppointment(appointmentDTO);
         Appointment appointmentSaved = appointmentRepository.save(appointmentToSave);
         return appointmentToAppointmentDTO(appointmentSaved);
+    }
+
+    public List<AppointmentDTO> findAll() {
+        List<Appointment> appointmentList = appointmentRepository.findAll();
+        List<AppointmentDTO> response = new ArrayList<>();
+        for (Appointment appointment:appointmentList) {
+            response.add(appointmentToAppointmentDTO(appointment));
+        }
+        return response;
     }
 }

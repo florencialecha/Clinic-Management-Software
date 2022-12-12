@@ -30,9 +30,11 @@ public class DentistService {
             return dentistRepository.findById(id);
     }
 
+/*
     public Optional<Dentist> findByNameAndLastname(String name, String lastName) {
         return dentistRepository.findByNameAndLastName(name, lastName);
     }
+*/
 
     public List<Dentist> findAll() { return dentistRepository.findAll();};
 
