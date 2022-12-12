@@ -1,9 +1,11 @@
 package com.dh.SessionBookingSystem.controller.manageAppointments;
 
 import com.dh.SessionBookingSystem.dto.AppointmentDTO;
+import com.dh.SessionBookingSystem.exception.ResourceNotFoundException;
 import com.dh.SessionBookingSystem.service.AppointmentService;
 import com.dh.SessionBookingSystem.service.DentistService;
 import com.dh.SessionBookingSystem.service.PatientService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,6 +23,8 @@ public class FindAllAppointmentController {
     private DentistService dentistService;
     private PatientService patientService;
 
+    private final Logger LOGGER = Logger.getLogger(FindAllAppointmentController.class);
+
     @Autowired
     public FindAllAppointmentController(AppointmentService appointmentService, DentistService dentistService, PatientService patientService) {
         this.appointmentService = appointmentService;
@@ -29,7 +33,8 @@ public class FindAllAppointmentController {
     }
 
     @GetMapping
-    public ResponseEntity<List<AppointmentDTO>> findAll() {
+    public ResponseEntity<List<AppointmentDTO>> findAll() throws ResourceNotFoundException {
+        LOGGER.info("Request send: you are trying to list all appointments.");
         return ResponseEntity.ok(appointmentService.findAll());
     }
 

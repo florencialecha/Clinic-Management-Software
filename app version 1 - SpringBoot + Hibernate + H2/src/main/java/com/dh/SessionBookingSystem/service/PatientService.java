@@ -1,8 +1,12 @@
 package com.dh.SessionBookingSystem.service;
 
+import com.dh.SessionBookingSystem.entity.Appointment;
 import com.dh.SessionBookingSystem.entity.Dentist;
 import com.dh.SessionBookingSystem.entity.Patient;
+import com.dh.SessionBookingSystem.exception.BadRequestException;
+import com.dh.SessionBookingSystem.exception.ResourceNotFoundException;
 import com.dh.SessionBookingSystem.repository.PatientRepository;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,30 +17,40 @@ import java.util.Optional;
 public class PatientService {
 
     private PatientRepository patientRepository;
+    private final Logger LOGGER = Logger.getLogger(PatientService.class);
 
     @Autowired
     public PatientService(PatientRepository patientRepository) {
         this.patientRepository = patientRepository;
     }
 
-    public void save(Patient patient) {
+    public void save(Patient patient) throws BadRequestException {
+        LOGGER.info("We have received your request. Please wait.");
        patientRepository.save(patient);
+       LOGGER.info("Order completed. We are sending the result.");
     }
 
-    public Optional<Patient> findById(Long id) {
+    public Optional<Patient> findById(Long id) throws ResourceNotFoundException {
+        LOGGER.info("We have received your request. Please wait.");
         return patientRepository.findById(id);
     }
 
-    public void deleteById(Long id) {
-        patientRepository.deleteById(id);
-    }
-
-    public Optional<Patient> findByNameAndLastname(String name, String lastname) {
-        return patientRepository.findByNameAndLastName(name, lastname);
-    }
-
-    public List<Patient> findAll() {
+    public List<Patient> findAll() throws ResourceNotFoundException {
+        LOGGER.info("We have received your request. Please wait.");
         return patientRepository.findAll();
     }
+
+    public void update(Patient patient) throws BadRequestException, ResourceNotFoundException {
+        LOGGER.info("We have received your request. Please wait.");
+        patientRepository.save(patient);
+        LOGGER.info("Order completed. We are sending the result.");
+    }
+
+    public void deleteById(Long id) throws ResourceNotFoundException {
+        LOGGER.info("We have received your request. Please wait.");
+        patientRepository.deleteById(id);
+        LOGGER.info("Order completed. We are sending the result.");
+    }
+
 
 }

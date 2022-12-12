@@ -1,7 +1,10 @@
 package com.dh.SessionBookingSystem.controller.manageDentists;
 
+import com.dh.SessionBookingSystem.controller.manageAppointments.SaveApponintmentController;
 import com.dh.SessionBookingSystem.entity.Dentist;
+import com.dh.SessionBookingSystem.exception.BadRequestException;
 import com.dh.SessionBookingSystem.service.DentistService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class SaveDentistController {
 
     private DentistService dentistService;
+    private final Logger LOGGER = Logger.getLogger(SaveDentistController.class);
 
     @Autowired
     public SaveDentistController(DentistService dentistService) {
@@ -22,8 +26,12 @@ public class SaveDentistController {
     }
 
     @PostMapping
-    public ResponseEntity<String> save(@RequestBody Dentist dentist) {
+    public void save(@RequestBody Dentist dentist) throws BadRequestException {
+
+        LOGGER.info("Request send: you are trying to save a dentist with name: " + dentist.getName() + ".");
         dentistService.save(dentist);
-        return ResponseEntity.status(200).body("Se agregó un nuevo odontólogo con nombre: " + dentist.getName() + ", apellido: " + dentist.getLastName() + ", matrícula: " + dentist.getLicense() + ", e id: " + dentist.getId() + ".");
-        }
+        LOGGER.info("Add a dentist with id: " + dentist.getId() + ".");
+
+    }
+
 }

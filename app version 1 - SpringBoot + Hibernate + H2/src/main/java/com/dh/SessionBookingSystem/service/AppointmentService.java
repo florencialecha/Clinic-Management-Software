@@ -4,7 +4,10 @@ import com.dh.SessionBookingSystem.dto.AppointmentDTO;
 import com.dh.SessionBookingSystem.entity.Appointment;
 import com.dh.SessionBookingSystem.entity.Dentist;
 import com.dh.SessionBookingSystem.entity.Patient;
+import com.dh.SessionBookingSystem.exception.BadRequestException;
+import com.dh.SessionBookingSystem.exception.ResourceNotFoundException;
 import com.dh.SessionBookingSystem.repository.AppointmentRepository;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,20 +19,51 @@ import java.util.Optional;
 public class AppointmentService {
 
     private AppointmentRepository appointmentRepository;
+    private final Logger LOGGER = Logger.getLogger(AppointmentService.class);
 
     @Autowired
     public AppointmentService(AppointmentRepository appointmentRepository) {
         this.appointmentRepository = appointmentRepository;
     }
 
-    public Optional<AppointmentDTO> findById(Long id) {
+    public void save(AppointmentDTO appointmentDTO) throws BadRequestException {
+        LOGGER.info("You are trying to add an Appointment with appointment date: " + appointmentDTO.getAppointmentDate() + ".");
+        Appointment appointmentToSave = appointmentDTOToAppointment(appointmentDTO);
+        Appointment appointmentSaved = appointmentRepository.save(appointmentToSave);
+        appointmentToAppointmentDTO(appointmentSaved);
+        LOGGER.info("Order completed. We are sending the result.");
+    }
+
+    public Optional<AppointmentDTO> findById(Long id) throws ResourceNotFoundException {
         Optional<Appointment> searchAppointment = appointmentRepository.findById(id);
+        LOGGER.info("We have received your request. Please wait.");
         if (searchAppointment.isEmpty()) {
-            return Optional.empty();
+            throw new ResourceNotFoundException("Don't find any appointment with id: " + id + ". Try again.");
         }
-        else {
-            return Optional.of(appointmentToAppointmentDTO(searchAppointment.get()));
+        return Optional.of(appointmentToAppointmentDTO(searchAppointment.get()));
+    }
+
+    public List<AppointmentDTO> findAll() throws ResourceNotFoundException {
+        LOGGER.info("We have received your request. Please wait.");
+        List<Appointment> appointmentList = appointmentRepository.findAll();
+        List<AppointmentDTO> response = new ArrayList<>();
+        for (Appointment appointment:appointmentList) {
+            response.add(appointmentToAppointmentDTO(appointment));
         }
+        return response;
+    }
+
+    public void update(AppointmentDTO appointmentDTO) throws BadRequestException, ResourceNotFoundException {
+        LOGGER.info("We have received your request. Please wait.");
+        Appointment appointmentToUpdate = appointmentDTOToAppointment(appointmentDTO);
+        appointmentRepository.save(appointmentToUpdate);
+        LOGGER.info("Order completed. We are sending the result.");
+    }
+
+    public void deleteById(Long id) throws ResourceNotFoundException {
+        LOGGER.info("We have received your request. Please wait.");
+        appointmentRepository.deleteById(id);
+        LOGGER.info("Order completed. We are sending the result.");
     }
 
     private AppointmentDTO appointmentToAppointmentDTO(Appointment appointment) {
@@ -63,27 +97,4 @@ public class AppointmentService {
 
     }
 
-    public AppointmentDTO save(AppointmentDTO appointmentDTO) {
-        Appointment appointmentToSave = appointmentDTOToAppointment(appointmentDTO);
-        Appointment appointmentSaved = appointmentRepository.save(appointmentToSave);
-        return appointmentToAppointmentDTO(appointmentSaved);
-    }
-
-    public List<AppointmentDTO> findAll() {
-        List<Appointment> appointmentList = appointmentRepository.findAll();
-        List<AppointmentDTO> response = new ArrayList<>();
-        for (Appointment appointment:appointmentList) {
-            response.add(appointmentToAppointmentDTO(appointment));
-        }
-        return response;
-    }
-
-    public void deleteById(Long id) {
-        appointmentRepository.deleteById(id);
-    }
-
-    public void update(AppointmentDTO appointmentDTO) {
-        Appointment appointmentToUpdate = appointmentDTOToAppointment(appointmentDTO);
-        appointmentRepository.save(appointmentToUpdate);
-    }
 }

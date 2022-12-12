@@ -1,7 +1,10 @@
 package com.dh.SessionBookingSystem.controller.managePatients;
 
+import com.dh.SessionBookingSystem.controller.manageDentists.SaveDentistController;
 import com.dh.SessionBookingSystem.entity.Patient;
+import com.dh.SessionBookingSystem.exception.BadRequestException;
 import com.dh.SessionBookingSystem.service.PatientService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class SavePatientController {
 
     private PatientService patientService;
+    private final Logger LOGGER = Logger.getLogger(SavePatientController.class);
 
     @Autowired
     public SavePatientController(PatientService patientService) {
@@ -22,9 +26,12 @@ public class SavePatientController {
     }
 
     @PostMapping
-    public ResponseEntity<String> save(@RequestBody Patient patient) {
+    public void save(@RequestBody Patient patient) throws BadRequestException {
+
+        LOGGER.info("Request send: you are trying to save a patient with name: " + patient.getName() + ".");
         patientService.save(patient);
-        return ResponseEntity.status(200).body("Add patient with id: " + patient.getId() + ", name: " + patient.getName() + ", last name: " + patient.getLastName() + ", dni: " + patient.getDni() + ", entry date: " + patient. getEntryDate() + ".");
+        LOGGER.info("Add a patient with id: " + patient.getId() + ".");
+
     }
 
 }

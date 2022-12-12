@@ -1,7 +1,11 @@
 package com.dh.SessionBookingSystem.controller.managePatients;
 
+import com.dh.SessionBookingSystem.controller.manageDentists.UpdateDentistController;
 import com.dh.SessionBookingSystem.entity.Patient;
+import com.dh.SessionBookingSystem.exception.BadRequestException;
+import com.dh.SessionBookingSystem.exception.ResourceNotFoundException;
 import com.dh.SessionBookingSystem.service.PatientService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -17,6 +21,7 @@ import java.util.Optional;
 public class UpdatePatientController {
 
     private PatientService patientService;
+    private final Logger LOGGER = Logger.getLogger(UpdatePatientController.class);
 
     @Autowired
     public UpdatePatientController(PatientService patientService) {
@@ -24,13 +29,15 @@ public class UpdatePatientController {
     }
 
     @PutMapping
-    public ResponseEntity<String> update(@RequestBody Patient patient) {
+    public void update(@RequestBody Patient patient) throws ResourceNotFoundException, BadRequestException {
+
+        LOGGER.info("Request send: you are trying to update a patient with name: " + patient.getName() + "." );
         Optional<Patient> searchPatient = patientService.findById(patient.getId());
         if (searchPatient.isEmpty()) {
-            return ResponseEntity.status(400).body("Can't update dentist with id: " + patient.getId() + " . The dentist does not exist in the database.");
+            throw new ResourceNotFoundException("Can't update a patient who does not exist in the database.");
         }
-        patientService.save(patient);
-        return ResponseEntity.status(200).body("Update patient whit id: " + patient.getId() + ", name: " + patient.getName() + ".");
+        patientService.update(patient);
+        LOGGER.info("Update patient with id: " + patient.getId());
     }
 
 }

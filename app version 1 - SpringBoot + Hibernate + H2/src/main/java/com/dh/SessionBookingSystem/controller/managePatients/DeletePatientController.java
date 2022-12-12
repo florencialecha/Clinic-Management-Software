@@ -1,7 +1,10 @@
 package com.dh.SessionBookingSystem.controller.managePatients;
 
+import com.dh.SessionBookingSystem.controller.manageDentists.DeleteDentistController;
 import com.dh.SessionBookingSystem.entity.Patient;
+import com.dh.SessionBookingSystem.exception.ResourceNotFoundException;
 import com.dh.SessionBookingSystem.service.PatientService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -17,6 +20,7 @@ import java.util.Optional;
 public class DeletePatientController {
 
     private PatientService patientService;
+    private final Logger LOGGER = Logger.getLogger(DeletePatientController.class);
 
     @Autowired
     public DeletePatientController(PatientService patientService) {
@@ -24,13 +28,16 @@ public class DeletePatientController {
     }
 
     @DeleteMapping("/{id}")
-    private ResponseEntity<String> deletePatient(@PathVariable Long id) {
+    private void deletePatient(@PathVariable Long id) throws ResourceNotFoundException {
+
+        LOGGER.info("Request send: you are trying to delete a patient with id: " + id + ".");
         Optional<Patient> searchPatient = patientService.findById(id);
         if (searchPatient.isEmpty()) {
-            ResponseEntity.status(400).body("Can't delete patient with id: " + id + " . The patient does not exist in the database.");
+            throw new ResourceNotFoundException("Can't delete a patient who does not exist in the database.");
         }
         patientService.deleteById(id);
-        return ResponseEntity.status(200).body("Delete patient with id: " + id);
+        LOGGER.info("Delete patient with id: " + id);
+
     }
 
 }

@@ -1,7 +1,10 @@
 package com.dh.SessionBookingSystem.controller.manageDentists;
 
+import com.dh.SessionBookingSystem.controller.manageAppointments.FindAllAppointmentController;
 import com.dh.SessionBookingSystem.entity.Dentist;
+import com.dh.SessionBookingSystem.exception.ResourceNotFoundException;
 import com.dh.SessionBookingSystem.service.DentistService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +18,7 @@ import java.util.List;
 public class FindAllDentistController {
 
     private DentistService dentistService;
+    private final Logger LOGGER = Logger.getLogger(FindAllDentistController.class);
 
     @Autowired
     public FindAllDentistController(DentistService dentistService) {
@@ -22,7 +26,8 @@ public class FindAllDentistController {
     }
 
     @GetMapping
-    public List<Dentist> findAllDentist() {
+    public List<Dentist> findAllDentist() throws ResourceNotFoundException {
+        LOGGER.info("Request send: you are trying to list all dentist.");
         return dentistService.findAll();
     }
 }

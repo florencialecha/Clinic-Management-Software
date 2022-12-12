@@ -1,7 +1,10 @@
 package com.dh.SessionBookingSystem.controller.manageDentists;
 
+import com.dh.SessionBookingSystem.controller.manageAppointments.FindByAppointmentController;
 import com.dh.SessionBookingSystem.entity.Dentist;
+import com.dh.SessionBookingSystem.exception.ResourceNotFoundException;
 import com.dh.SessionBookingSystem.service.DentistService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +17,7 @@ import java.util.Optional;
 public class FindByDentistController {
 
     private DentistService dentistService;
+    private final Logger LOGGER = Logger.getLogger(FindByDentistController.class);
 
     @Autowired
     public FindByDentistController(DentistService dentistService) {
@@ -21,21 +25,13 @@ public class FindByDentistController {
     }
 
     @GetMapping("/byId")
-    public ResponseEntity<Optional<Dentist>> findDentistById(@RequestParam Long id) {
+    public ResponseEntity<Optional<Dentist>> findDentistById(@RequestParam Long id) throws ResourceNotFoundException {
+        LOGGER.info("Request send: you are trying to find a Dentist.");
         Optional<Dentist> searchDentist = dentistService.findById(id);
         if (searchDentist.isEmpty()) {
-            return ResponseEntity.status(400).body(null);
+            throw new ResourceNotFoundException("Can't find a dentist who does not exist in the database.");
         }
         return ResponseEntity.status(200).body(searchDentist);
     }
-
-/*    @GetMapping("/byNameAndLastName")
-    public ResponseEntity<Optional<Dentist>> findDentistByNameAndLastname(@RequestParam String name, String lastName) {
-        Optional<Dentist> searchDentist = dentistService.findByNameAndLastname(name, lastName);
-        if (searchDentist.isEmpty()) {
-            return ResponseEntity.status(400).body(null);
-        }
-        return ResponseEntity.status(200).body(searchDentist);
-    }*/
 
 }
