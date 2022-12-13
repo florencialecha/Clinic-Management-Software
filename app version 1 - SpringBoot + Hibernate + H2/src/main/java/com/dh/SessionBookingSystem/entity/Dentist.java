@@ -1,14 +1,16 @@
 package com.dh.SessionBookingSystem.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table
 @Getter @Setter
-
 public class Dentist {
 
     @Id
@@ -17,7 +19,11 @@ public class Dentist {
     private String name;
     private String lastName;
     private String license;
-    
+
+    @OneToMany(mappedBy = "dentist", fetch = FetchType.EAGER)
+    @JsonIgnore
+    private Set<Appointment> appointmentSet = new HashSet<>();
+
     public Dentist() {
     }
 

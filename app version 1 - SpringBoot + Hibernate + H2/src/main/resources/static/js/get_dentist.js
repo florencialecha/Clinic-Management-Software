@@ -1,6 +1,6 @@
 window.addEventListener('load', function () {
     (function(){
-      const url = '/odontologos';
+      const url = '/byId';
       const settings = {
         method: 'GET'
       }
@@ -9,7 +9,7 @@ window.addEventListener('load', function () {
       .then(response => response.json())
       .then(data => {
          for(odontologo of data){
-            let table = document.getElementById("odontologoTable");
+            let table = document.getElementById("dentistTable");
             let odontologoRow = table.insertRow();
             let tr_id = 'tr_' + odontologo.id;
             odontologoRow.id = tr_id;
@@ -38,7 +38,7 @@ window.addEventListener('load', function () {
     })
     (function(){
       let pathname = window.location.pathname;
-      if (pathname == "/get_odontologo.html") {
+      if (pathname == "/get_dentist.html") {
           document.querySelector(".nav .nav-item a:last").addClass("active");
       }
     })

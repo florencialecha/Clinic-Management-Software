@@ -288,3 +288,11 @@
 [2022-12-12 16:14:45] [ INFO ] [PatientService:26] We have received your request. Please wait.
 [2022-12-12 16:23:17] [ INFO ] [PatientService:26] We have received your request. Please wait.
 [2022-12-12 16:25:39] [ INFO ] [PatientService:26] We have received your request. Please wait.
+[2022-12-12 21:06:44] [ INFO ] [SaveDentistController:31] Request send: you are trying to save a dentist with name: null.
+[2022-12-12 21:06:44] [ INFO ] [DentistService:26] We have received your request. Please wait.
+[2022-12-12 21:06:45] [ INFO ] [DentistService:28] Order completed. We are sending the result.
+[2022-12-12 21:06:45] [ INFO ] [SaveDentistController:33] Add a dentist with id: 1.
+[2022-12-12 21:13:26] [ INFO ] [SaveDentistController:31] Request send: you are trying to save a dentist with name: null.
+[2022-12-12 21:13:26] [ INFO ] [DentistService:26] We have received your request. Please wait.
+[2022-12-12 21:13:26] [ INFO ] [DentistService:28] Order completed. We are sending the result.
+[2022-12-12 21:13:26] [ INFO ] [SaveDentistController:33] Add a dentist with id: 1.

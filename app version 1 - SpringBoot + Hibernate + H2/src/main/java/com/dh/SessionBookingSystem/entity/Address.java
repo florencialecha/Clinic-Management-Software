@@ -8,7 +8,6 @@ import javax.persistence.*;
 @Entity
 @Table
 @Getter @Setter
-
 public class Address {
 
     @Id
@@ -20,6 +19,13 @@ public class Address {
     private String state;
 
     public Address() {
+    }
+
+    public Address(String street, Integer number, String town, String state) {
+        this.street = street;
+        this.number = number;
+        this.town = town;
+        this.state = state;
     }
 
     public Address(Long id, String street, Integer number, String town, String state) {

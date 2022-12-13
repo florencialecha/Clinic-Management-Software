@@ -9,7 +9,6 @@ import java.time.LocalDate;
 @Entity
 @Table
 @Getter @Setter
-
 public class Appointment {
 
     @Id
