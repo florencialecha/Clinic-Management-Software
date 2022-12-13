@@ -22,7 +22,7 @@ public class Dentist {
     @JsonIgnore
     @OneToMany(mappedBy = "dentist", fetch = FetchType.EAGER)
     private Set<Appointment> appointmentSet = new HashSet<>();
-    
+
     public Dentist() {
     }
 

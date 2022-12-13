@@ -1,6 +1,6 @@
 
 window.addEventListener('load', function () {
-    const form = document.querySelector('#add_new_odontologo');
+    const form = document.querySelector('#add_new_dentist');
     form.addEventListener('submit', (e) => {
     console.log(e)
         e.preventDefault();
@@ -9,7 +9,7 @@ window.addEventListener('load', function () {
             nombre: document.querySelector('#nombre').value,
             apellido: document.querySelector('#apellido').value,
         };
-        const url = '/odontologos';
+        const url = '/saveDentist';
         const settings = {
             method: 'POST',
             headers: {

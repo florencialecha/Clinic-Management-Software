@@ -21,9 +21,11 @@ public class Address {
     }
 
     public Address(String street, Integer number, String town, String state) {
+
         this.street = street;
         this.number = number;
         this.town = town;
         this.state = state;
     }
+    
 }
