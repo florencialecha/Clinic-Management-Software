@@ -10,11 +10,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table
+@Table(name = "patients")
 @Getter @Setter
-
 public class Patient {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -26,34 +24,35 @@ public class Patient {
     private Integer dni;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "domicilio_id", nullable = false)
+    @JoinColumn(name = "domicilio_id", referencedColumnName = "id", nullable = false)
     private Address address;
     private LocalDate entryDate;
 
     private String email;
 
-    @OneToMany(mappedBy = "patient",fetch = FetchType.LAZY)
     @JsonIgnore
-    private Set<Appointment> turnos= new HashSet<>();
+    @OneToMany(mappedBy = "patient", fetch = FetchType.LAZY)
+    private Set<Appointment> appointmentSet= new HashSet<>();
 
     public Patient() {
     }
 
-    public Patient(String name, String lastName, Integer dni, Address address, LocalDate entryDate) {
+    public Patient(String name, String lastName, Integer dni, Address address, LocalDate entryDate, String email) {
         this.name = name;
         this.lastName = lastName;
         this.dni = dni;
         this.address = address;
         this.entryDate = entryDate;
+        this.email = email;
     }
 
-    public Patient(Long id, String name, String lastName, Address address, Integer dni, LocalDate entryDate) {
+    public Patient(Long id, String name, String lastName, Integer dni, Address address, LocalDate entryDate, String email) {
         this.id = id;
         this.name = name;
         this.lastName = lastName;
-        //this.address = address;
         this.dni = dni;
+        this.address = address;
         this.entryDate = entryDate;
+        this.email = email;
     }
-
 }

@@ -2,7 +2,6 @@ package com.dh.SessionBookingSystem.service;
 
 import com.dh.SessionBookingSystem.entity.Address;
 import com.dh.SessionBookingSystem.entity.Patient;
-import com.dh.SessionBookingSystem.exception.BadRequestException;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -16,7 +15,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @SpringBootTest
-
 public class PatientServiceTest {
 
     @Autowired
@@ -25,9 +23,9 @@ public class PatientServiceTest {
     @Test
     @Order(1)
     public void savePatientTest() {
-        Patient
-        Patient patientToSave = new Patient("Florencia", "Lecha", 5213901, new Address(1L, "Eduardo Acevedo", 1261, "Montevideo", "Montevideo"),LocalDate.of(2022, 11, 28));
+        Patient patientToSave = new Patient("Florencia", "Lecha", 5213901, new Address("Eduardo Acevedo", 1261, "Montevideo", "Montevideo"),LocalDate.of(2022, 11, 28), "flecha@gmail.com");
         Patient patientSaved = patientService.save(patientToSave);
         assertEquals(1L, patientSaved.getId());
     }
+
 }
