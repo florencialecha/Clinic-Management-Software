@@ -1,4 +1,5 @@
-# Sessions Booking System
+# Clinic Management Software
+
 Appointment booking system for a dental clinic. 
 [Project done for the Backend I subject, part of the Certified Tech Developer course taken at Digital House.](https://github.com/florencialecha/sessionsBookingSystem/files/9933116/Trabajo.Integrador.Back.End.I.docx.pdf)
 
@@ -19,3 +20,5 @@ The application must be developed in layers:
 - Presentation layer: these are the web screens that we will have to develop using the Spring Boot MVC framework with the controllers and one of these two options: HTML+JavaScript or React for the view.
 
 It is important to perform exception handling by logging any exception that may be generated and performing unit tests to ensure the quality of the developments.
+
+=> Next step: Turn it into an appointment booking software like https://calendly.com/
