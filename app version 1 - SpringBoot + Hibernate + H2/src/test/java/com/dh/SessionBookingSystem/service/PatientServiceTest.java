@@ -1,7 +1,10 @@
 package com.dh.SessionBookingSystem.service;
 import com.dh.SessionBookingSystem.entity.Address;
 import com.dh.SessionBookingSystem.entity.Patient;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import java.time.LocalDate;
@@ -10,8 +13,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 @SpringBootTest
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-
 
 public class PatientServiceTest {
 
@@ -24,4 +25,5 @@ public class PatientServiceTest {
         Patient patientSaved = patientService.save(patientToSave);
         assertEquals(1L, patientSaved.getId());
     }
+
 }

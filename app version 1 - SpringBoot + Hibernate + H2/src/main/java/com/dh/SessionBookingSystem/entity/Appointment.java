@@ -7,10 +7,9 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table
+@Table(name = "appointments")
 @Getter @Setter
 public class Appointment {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

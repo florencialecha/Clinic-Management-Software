@@ -9,10 +9,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table
+@Table(name = "dentists")
 @Getter @Setter
 public class Dentist {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -20,8 +19,8 @@ public class Dentist {
     private String lastName;
     private String license;
 
-    @OneToMany(mappedBy = "dentist", fetch = FetchType.EAGER)
     @JsonIgnore
+    @OneToMany(mappedBy = "dentist", fetch = FetchType.EAGER)
     private Set<Appointment> appointmentSet = new HashSet<>();
 
     public Dentist() {

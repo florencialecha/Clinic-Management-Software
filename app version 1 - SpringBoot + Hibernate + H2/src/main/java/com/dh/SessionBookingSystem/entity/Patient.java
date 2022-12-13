@@ -10,10 +10,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table
+@Table(name = "patients")
 @Getter @Setter
 public class Patient {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -31,9 +30,9 @@ public class Patient {
 
     private String email;
 
-    @OneToMany(mappedBy = "patient",fetch = FetchType.LAZY)
     @JsonIgnore
-    private Set<Appointment> appointmentSet = new HashSet<>();
+    @OneToMany(mappedBy = "patient", fetch = FetchType.LAZY)
+    private Set<Appointment> appointmentSet= new HashSet<>();
 
     public Patient() {
     }
