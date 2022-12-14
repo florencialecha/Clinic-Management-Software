@@ -522,3 +522,47 @@
 [2022-12-13 16:02:27] [ INFO ] [DentistService:33] We have received your request. Please wait.
 [2022-12-13 16:02:32] [ INFO ] [FindAllDentistController:30] Request send: you are trying to list all dentist.
 [2022-12-13 16:02:32] [ INFO ] [DentistService:38] We have received your request. Please wait.
+[2022-12-13 17:28:19] [ INFO ] [PatientService:25] We have received your request. Please wait.
+[2022-12-13 17:28:19] [ INFO ] [PatientService:27] Order completed. We are sending the result.
+[2022-12-13 17:28:20] [ INFO ] [PatientService:32] We have received your request. Please wait.
+[2022-12-13 17:28:20] [ INFO ] [PatientService:37] We have received your request. Please wait.
+[2022-12-13 17:28:20] [ INFO ] [PatientService:25] We have received your request. Please wait.
+[2022-12-13 17:28:20] [ INFO ] [PatientService:27] Order completed. We are sending the result.
+[2022-12-13 17:28:20] [ INFO ] [PatientService:42] We have received your request. Please wait.
+[2022-12-13 17:28:20] [ INFO ] [PatientService:44] Order completed. We are sending the result.
+[2022-12-13 17:28:20] [ INFO ] [PatientService:32] We have received your request. Please wait.
+[2022-12-13 17:28:20] [ INFO ] [PatientService:48] We have received your request. Please wait.
+[2022-12-13 17:28:20] [ INFO ] [PatientService:50] Order completed. We are sending the result.
+[2022-12-13 17:28:20] [ INFO ] [PatientService:32] We have received your request. Please wait.
+[2022-12-13 17:28:20] [ INFO ] [DentistService:26] We have received your request. Please wait.
+[2022-12-13 17:28:20] [ INFO ] [DentistService:28] Order completed. We are sending the result.
+[2022-12-13 17:28:20] [ INFO ] [DentistService:33] We have received your request. Please wait.
+[2022-12-13 17:28:20] [ INFO ] [DentistService:38] We have received your request. Please wait.
+[2022-12-13 17:28:21] [ INFO ] [DentistService:26] We have received your request. Please wait.
+[2022-12-13 17:28:21] [ INFO ] [DentistService:28] Order completed. We are sending the result.
+[2022-12-13 17:28:21] [ INFO ] [DentistService:43] We have received your request. Please wait.
+[2022-12-13 17:28:21] [ INFO ] [DentistService:45] Order completed. We are sending the result.
+[2022-12-13 17:28:21] [ INFO ] [DentistService:33] We have received your request. Please wait.
+[2022-12-13 17:28:21] [ INFO ] [DentistService:48] We have received your request. Please wait.
+[2022-12-13 17:28:21] [ INFO ] [DentistService:50] Order completed. We are sending the result.
+[2022-12-13 17:28:21] [ INFO ] [DentistService:33] We have received your request. Please wait.
+[2022-12-13 17:28:21] [ INFO ] [PatientService:25] We have received your request. Please wait.
+[2022-12-13 17:28:21] [ INFO ] [PatientService:27] Order completed. We are sending the result.
+[2022-12-13 17:28:21] [ INFO ] [DentistService:26] We have received your request. Please wait.
+[2022-12-13 17:28:21] [ INFO ] [DentistService:28] Order completed. We are sending the result.
+[2022-12-13 17:28:21] [ INFO ] [AppointmentService:30] You are trying to add an Appointment with appointment date: 2022-12-12.
+[2022-12-13 17:28:21] [ INFO ] [AppointmentService:33] Order completed. We are sending the result.
+[2022-12-13 17:28:21] [ INFO ] [AppointmentService:39] We have received your request. Please wait.
+[2022-12-13 17:28:21] [ INFO ] [AppointmentService:47] We have received your request. Please wait.
+[2022-12-13 17:28:21] [ INFO ] [PatientService:25] We have received your request. Please wait.
+[2022-12-13 17:28:21] [ INFO ] [PatientService:27] Order completed. We are sending the result.
+[2022-12-13 17:28:21] [ INFO ] [DentistService:26] We have received your request. Please wait.
+[2022-12-13 17:28:21] [ INFO ] [DentistService:28] Order completed. We are sending the result.
+[2022-12-13 17:28:21] [ INFO ] [AppointmentService:30] You are trying to add an Appointment with appointment date: 2000-01-01.
+[2022-12-13 17:28:21] [ INFO ] [AppointmentService:33] Order completed. We are sending the result.
+[2022-12-13 17:28:21] [ INFO ] [AppointmentService:57] We have received your request. Please wait.
+[2022-12-13 17:28:21] [ INFO ] [AppointmentService:60] Order completed. We are sending the result.
+[2022-12-13 17:28:21] [ INFO ] [AppointmentService:39] We have received your request. Please wait.
+[2022-12-13 17:28:21] [ INFO ] [AppointmentService:64] We have received your request. Please wait.
+[2022-12-13 17:28:21] [ INFO ] [AppointmentService:66] Order completed. We are sending the result.
+[2022-12-13 17:28:21] [ INFO ] [AppointmentService:39] We have received your request. Please wait.
