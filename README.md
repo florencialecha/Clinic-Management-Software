@@ -3,6 +3,8 @@
 Appointment booking system for a dental clinic. 
 [Project done for the Backend I subject, part of the Certified Tech Developer course taken at Digital House.](https://github.com/florencialecha/sessionsBookingSystem/files/9933116/Trabajo.Integrador.Back.End.I.docx.pdf)
 
+| Java - Spring Boot framework - Maven - JUnit - Hibernate(JPA) - Diseño de API RESTful | 
+
 We want to implement a system to manage the appointment booking for a dental clinic. It must meet the following requirements:
 Dentist data management: list, add, modify and delete dentists. Register dentists' last name, first name and registration number.
 Patient data management: list, add, modify and delete patients. For each patient: name, surname, address, ID number and date of discharge are stored.
